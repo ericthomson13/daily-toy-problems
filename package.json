@@ -1,0 +1,23 @@
+{
+  "name": "daily-toy-problems",
+  "version": "1.0.0",
+  "description": "Repository for daily toy problems to kick the day off with",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericthomson13/daily-toy-problems.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericthomson13/daily-toy-problems/issues"
+  },
+  "homepage": "https://github.com/ericthomson13/daily-toy-problems#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
