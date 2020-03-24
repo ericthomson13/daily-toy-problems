@@ -1,7 +1,7 @@
 /*
 Code Prompt found at:
 https://leetcode.com/problems/two-sum/
-
+Difficulty: Easy
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
