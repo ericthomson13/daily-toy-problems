@@ -28,3 +28,5 @@ const twoSum = (nums, target) => {
 /* 
 time complexity could be improved by finding a single loop over the nested for loops
 */
+
+export default twoSum;
