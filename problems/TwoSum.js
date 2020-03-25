@@ -10,7 +10,8 @@ You may assume that each input would have exactly one solution, and you may not 
 
 const twoSum = (nums, target) => {
   // handle edge case if nums is invalid input
-  if (nums.length < 2) return false;
+  if (nums.length < 2) return 'invalid nums input';
+  if (typeof target !== 'number') return 'target value invalid';
   // iterate through starting from start
   for (let i = 0; i < nums.length; i++) {
     // iterate through starting one index after i
@@ -22,7 +23,7 @@ const twoSum = (nums, target) => {
     }
   }
   // return false if target not found
-  return false;
+  return 'one of the inputs was invalid';
 };
 
 /* 
