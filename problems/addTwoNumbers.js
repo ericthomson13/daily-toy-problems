@@ -33,40 +33,6 @@ Example:
     } 
   }
  */
-class List {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-  };
-  push (val) {
-    const newNode = new Node(val);
-    if (!!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-    }
-    this.tail.next = newNode;
-    this.tail = newNode;
-  }
-  pop () {
-    if (this.tail === this.head) {
-      this.tail = null;
-      this.head = null;
-      return;
-    }
-    let current = this.head;
-    let temp;
-    while (!!current.next) {
-      
-    }
-  }
-};
-
-class Node {
-  constructor(val) {
-    this.val = val;
-    this.next = null;
-  }
-};
 
 const addTwoNumbers = (l1, l2) => {
   // helper function to convert both lists to numbers
