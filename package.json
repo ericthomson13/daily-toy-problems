@@ -4,7 +4,12 @@
   "description": "Repository for daily toy problems to kick the day off with",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-new": "jest -o",
+    "watch": "jest --watch"
+  },
+  "jest": {
+    "verbose": true
   },
   "repository": {
     "type": "git",
