@@ -124,3 +124,5 @@ class SinglyLinkedList {
     return this;
   }
 }
+
+export default SinglyLinkedList;
