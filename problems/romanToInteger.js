@@ -37,10 +37,10 @@ const numerals = {
 
 const romanToInteger = (rom) => {
   if (typeof rom !== 'string') return 'invalid input';
-  if (rom.length === 1) return numerals[rom];
   let num = 0;
   for (let i = 0; i < rom.length; i++) {
     let current = numerals[rom[i]];
+    if(!current) return 'invalid input';
     let prev = numerals[rom[i - 1]];
     if (current > prev) {
       num = num + current - (prev * 2);
