@@ -7,6 +7,38 @@ describe('Testing for addTwoNumbers', () => {
     expect(addTwoNumbers(null, null)).toBe(0);
   });
 
+  test('Returns invalid inputs when first arg is not an object', () => {
+    const l2 = new SinglyLinkedList();
+    l2.push(1);
+    l2.push(2);
+    expect(addTwoNumbers('l1', l2)).toBe('please enter valid inputs');
+  });
+
+  test('Returns invalid inputs when second arg is not valid', () => {
+    const l1 = new SinglyLinkedList();
+    l1.push(1);
+    l1.push(2);
+    expect(addTwoNumbers(l1, 'l2')).toBe('please enter valid inputs');
+  });
+
+  test('Returns invalid inpus when an arg is an array', () => {
+    const l2 = new SinglyLinkedList();
+    l2.push(1);
+    l2.push(2);
+    expect(addTwoNumbers([], l2)).toBe('please enter valid inputs');
+  });
+
+  test('Returns invalid when an input is a boolean', () => {
+    const l2 = new SinglyLinkedList();
+    l2.push(1);
+    l2.push(2);
+    expect(addTwoNumbers(true, l2)).toBe('please enter valid inputs');
+  });
+
+  test('Returns 0 when inputs are both empty objects', () => {
+    expect(addTwoNumbers({}, {})).toBe(0);
+  });
+
   test('Returns l1 when l2 is null', () => {
     const l1 = new SinglyLinkedList();
     l1.push(1);

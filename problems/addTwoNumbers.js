@@ -17,11 +17,10 @@ import SinglyLinkedList from '../utilityDataStructures/singleLinkedList';
 
 // key to this problem is to start at the beginning of each list and carry the overflow up
 
-// ***** need to add handling for invalid inputs
-
 const addTwoNumbers = (l1, l2) => {
-  // if l1 or l2 empty return the other list
   if (!l1 && !l2) return 0;
+  if (typeof l1 !== 'object' || typeof l2 !== 'object') return 'please enter valid inputs';
+  if (Array.isArray(l1) || Array.isArray(l2)) return 'please enter valid inputs';
   if (!l1) return l2;
   if (!l2) return l1;
   const List = new SinglyLinkedList;
@@ -43,7 +42,7 @@ const addTwoNumbers = (l1, l2) => {
     sum = carry;
     carry = 0;
   }
-  return List;
+  return List.length === 0 ? 0 : List;
 };
 
 export default addTwoNumbers;
