@@ -9,8 +9,8 @@ describe('mergeTwoLists Tests', () => {
     l1.push(1);
     const l2 = new SinglyLinkedList;
     l2.push(2);
-    
-    expect(mergeTwoLists(l1,l2).traverseValues()).toEqual(expect.arrayContaining([1, 2]));
+
+    expect(mergeTwoLists(l1,l2).traverseValues()).toStrictEqual([1, 2]);
   });
 
   test('it returns a list with the correct values in order when given lists with longer lengths', () => {
