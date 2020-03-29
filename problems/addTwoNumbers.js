@@ -17,14 +17,16 @@ import SinglyLinkedList from '../utilityDataStructures/singleLinkedList';
 
 // key to this problem is to start at the beginning of each list and carry the overflow up
 
+// ***** need to add handling for invalid inputs
+
 const addTwoNumbers = (l1, l2) => {
   // if l1 or l2 empty return the other list
-  if (!l1.head && !l2.head) return 0;
-  if (!l1.head) return l2;
-  if (!l2.head) return l1;
+  if (!l1 && !l2) return 0;
+  if (!l1) return l2;
+  if (!l2) return l1;
   const List = new SinglyLinkedList;
   let sum = 0, carry = 0;
-  while (!!l1.head.val || !!l2.head.val || sum > 0) {
+  while (!!l1.head || !!l2.head || sum > 0) {
     if (!!l1.head) {
       sum += l1.head.val;
       l1.shift();
@@ -33,9 +35,9 @@ const addTwoNumbers = (l1, l2) => {
       sum += l2.head.val;
       l2.shift();
     }
-    if (sum > 9) {
+    if (sum >= 10) {
       carry = 1;
-      sum -= 9;
+      sum -= 10;
     }
     List.push(sum);
     sum = carry;
