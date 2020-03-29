@@ -124,8 +124,16 @@ class SinglyLinkedList {
     }
     return this;
   }
-  listValues () {
 
+  // added for easier testing of lists, converts values to array
+  traverseValues () {
+    const values = [];
+    let current = this.head;
+    while (current) {
+      values.push(current.val);
+      current = current.next;
+    }
+    return values;
   }
 }
 
