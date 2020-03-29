@@ -13,49 +13,35 @@ Example:
   Explanation: 342 + 465 = 807.
 */
 
-/*
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
+import SinglyLinkedList from '../utilityDataStructures/singleLinkedList';
 
- /*
-  Example List structure: 
-  ListNode = {
-    val: 2,
-    next: ListNode { 
-      val: 4, 
-      next: ListNode { 
-        val: 3, next: null 
-      } 
-    } 
-  }
- */
+// key to this problem is to start at the beginning of each list and carry the overflow up
 
 const addTwoNumbers = (l1, l2) => {
-  // helper function to convert both lists to numbers
-  const listToNumber = (list) => {
-    // start result as string so can add to front
-    let result = [];
-    // have current start at beginning of list
-    let current = list;
-    // loop through list and keep adding node to front of string
-    do {
-      // add current value to result string
-      result.unshift(current.val);
-      // move to next node
-      current = list.next;
-    } while(!!current);
-    // return result converted to number
-    return parseInt(result.join(''));
-  };
-  // convert both lists to strings of digits
-  let n1 = listToNumber(l1);
-  let n2 = listToNumber(l2);
-  // return two numbers added together
-  return n1 + n2;
+  // if l1 or l2 empty return the other list
+  if (!l1.head && !l2.head) return 0;
+  if (!l1.head) return l2;
+  if (!l2.head) return l1;
+  const List = new SinglyLinkedList;
+  let sum = 0, carry = 0;
+  while (!!l1.head.val || !!l2.head.val || sum > 0) {
+    if (!!l1.head) {
+      sum += l1.head.val;
+      l1.shift();
+    }
+    if (!!l2.head) {
+      sum += l2.head.val;
+      l2.shift();
+    }
+    if (sum > 9) {
+      carry = 1;
+      sum -= 9;
+    }
+    List.push(sum);
+    sum = carry;
+    carry = 0;
+  }
+  return List;
 };
 
 export default addTwoNumbers;
