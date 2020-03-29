@@ -125,7 +125,6 @@ class SinglyLinkedList {
     return this;
   }
 
-  // added for easier testing of lists, converts values to array in order
   traverseValues () {
     const values = [];
     let current = this.head;

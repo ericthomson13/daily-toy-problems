@@ -11,6 +11,7 @@ describe('Testing for addTwoNumbers', () => {
     const l2 = new SinglyLinkedList();
     l2.push(1);
     l2.push(2);
+
     expect(addTwoNumbers('l1', l2)).toBe('please enter valid inputs');
   });
 
@@ -18,6 +19,7 @@ describe('Testing for addTwoNumbers', () => {
     const l1 = new SinglyLinkedList();
     l1.push(1);
     l1.push(2);
+
     expect(addTwoNumbers(l1, 'l2')).toBe('please enter valid inputs');
   });
 
@@ -25,6 +27,7 @@ describe('Testing for addTwoNumbers', () => {
     const l2 = new SinglyLinkedList();
     l2.push(1);
     l2.push(2);
+
     expect(addTwoNumbers([], l2)).toBe('please enter valid inputs');
   });
 
@@ -32,6 +35,7 @@ describe('Testing for addTwoNumbers', () => {
     const l2 = new SinglyLinkedList();
     l2.push(1);
     l2.push(2);
+
     expect(addTwoNumbers(true, l2)).toBe('please enter valid inputs');
   });
 
@@ -44,7 +48,8 @@ describe('Testing for addTwoNumbers', () => {
     l1.push(1);
     l1.push(2);
 
-    expect(addTwoNumbers(l1, null).traverseValues()).toStrictEqual([1, 2]);
+    const solution = l1;
+    expect(addTwoNumbers(l1, null)).toStrictEqual(solution);
   });
 
   test('Returns l2 when l1 is null', () => {
@@ -52,29 +57,41 @@ describe('Testing for addTwoNumbers', () => {
     l2.push(1);
     l2.push(2);
 
-    expect(addTwoNumbers(null, l2).traverseValues()).toStrictEqual([1, 2]);
+    const solution = l2;
+
+    expect(addTwoNumbers(null, l2)).toStrictEqual(solution);
   });
 
   test('Returns correct sum when both are valid inputs', () => {
     const l1 = new SinglyLinkedList();
     l1.push(1);
     l1.push(2);
+
     const l2 = new SinglyLinkedList();
     l2.push(1);
     l2.push(2);
 
-    expect(addTwoNumbers(l1, l2).traverseValues()).toStrictEqual([2, 4]);
+    const solution = new SinglyLinkedList();
+    solution.push(2);
+    solution.push(4);
+
+    expect(addTwoNumbers(l1, l2)).toStrictEqual(solution);
   });
 
   test('Returns correct sum when input requires carrying to next place', () => {
     const l1 = new SinglyLinkedList();
     l1.push(1);
     l1.push(3);
+
     const l2 = new SinglyLinkedList();
     l2.push(9);
     l2.push(1);
 
-    expect(addTwoNumbers(l1, l2).traverseValues()).toStrictEqual([0, 5]);
+    const solution = new SinglyLinkedList();
+    solution.push(0);
+    solution.push(5);
+
+    expect(addTwoNumbers(l1, l2)).toStrictEqual(solution);
   });
 
   test('Returns correct sum when inputs are longer than 2 digits each', () => {
@@ -84,6 +101,7 @@ describe('Testing for addTwoNumbers', () => {
     l1.push(8);
     l1.push(7);
     l1.push(1);
+
     const l2 = new SinglyLinkedList();
     l2.push(8);
     l2.push(0);
@@ -91,7 +109,14 @@ describe('Testing for addTwoNumbers', () => {
     l2.push(4);
     l2.push(5);
 
-    expect(addTwoNumbers(l1, l2).traverseValues()).toStrictEqual([ 0, 4, 0, 2, 7 ]);
+    const solution = new SinglyLinkedList();
+    solution.push(0);
+    solution.push(4);
+    solution.push(0);
+    solution.push(2);
+    solution.push(7);
+
+    expect(addTwoNumbers(l1, l2)).toStrictEqual(solution);
   });
 
   test('Returns correct sum when l1 is longer than l2', () => {
@@ -101,18 +126,27 @@ describe('Testing for addTwoNumbers', () => {
     l1.push(0);
     l1.push(3);
     l1.push(6);
+
     const l2 = new SinglyLinkedList();
     l2.push(8);
     l2.push(0);
     l2.push(3);
 
-    expect(addTwoNumbers(l1, l2).traverseValues()).toStrictEqual([ 0, 2, 3, 3, 6 ])
+    const solution = new SinglyLinkedList();
+    solution.push(0)
+    solution.push(2)
+    solution.push(3)
+    solution.push(3)
+    solution.push(6)
+
+    expect(addTwoNumbers(l1, l2)).toStrictEqual(solution)
   });
 
   test('Returns correct sum when l2 is longer than l1', () => {
     const l1 = new SinglyLinkedList();
     l1.push(2);
     l1.push(3);
+
     const l2 = new SinglyLinkedList();
     l2.push(8);
     l2.push(0);
@@ -120,7 +154,14 @@ describe('Testing for addTwoNumbers', () => {
     l2.push(2);
     l2.push(6);
 
-    expect(addTwoNumbers(l1, l2).traverseValues()).toStrictEqual([ 0, 4, 2, 2, 6 ])
+    const solution = new SinglyLinkedList();
+    solution.push(0)
+    solution.push(4)
+    solution.push(2)
+    solution.push(2)
+    solution.push(6)
+
+    expect(addTwoNumbers(l1, l2)).toStrictEqual(solution);
   });
   test('Returns correct value when final sum needs carrying', () => {
     const l1 = new SinglyLinkedList();
@@ -129,6 +170,7 @@ describe('Testing for addTwoNumbers', () => {
     l1.push(8);
     l1.push(7);
     l1.push(6);
+
     const l2 = new SinglyLinkedList();
     l2.push(8);
     l2.push(0);
@@ -136,6 +178,14 @@ describe('Testing for addTwoNumbers', () => {
     l2.push(4);
     l2.push(5);
 
-    expect(addTwoNumbers(l1, l2).traverseValues()).toStrictEqual([ 0, 4, 0, 2, 2, 1 ])
+    const solution = new SinglyLinkedList();
+    solution.push(0)
+    solution.push(4)
+    solution.push(0)
+    solution.push(2)
+    solution.push(2)
+    solution.push(1)
+
+    expect(addTwoNumbers(l1, l2)).toStrictEqual(solution)
   });
 });
