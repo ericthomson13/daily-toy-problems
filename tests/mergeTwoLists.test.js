@@ -10,7 +10,11 @@ describe('mergeTwoLists Tests', () => {
     const l2 = new SinglyLinkedList;
     l2.push(2);
 
-    expect(mergeTwoLists(l1,l2).traverseValues()).toStrictEqual([1, 2]);
+    const solution = new SinglyLinkedList();
+    solution.push(1);
+    solution.push(2);
+
+    expect(mergeTwoLists(l1,l2)).toStrictEqual(solution);
   });
 
   test('it returns a list with the correct values in order when given lists with longer lengths', () => {
@@ -26,7 +30,17 @@ describe('mergeTwoLists Tests', () => {
     l2.push(4);
     l2.push(5);
 
-    expect(mergeTwoLists(l1,l2).traverseValues()).toStrictEqual([1, 2, 3, 3, 4, 5, 5, 7]);
+    const solution = new SinglyLinkedList();
+    solution.push(1);
+    solution.push(2);
+    solution.push(3);
+    solution.push(3);
+    solution.push(4);
+    solution.push(5);
+    solution.push(5);
+    solution.push(7);
+
+    expect(mergeTwoLists(l1,l2)).toStrictEqual(solution);
   });
 
   test(`it doesn't return the values in correct order when lists aren't sorted`, () => {
@@ -42,7 +56,17 @@ describe('mergeTwoLists Tests', () => {
     l2.push(4);
     l2.push(5);
 
-    expect(mergeTwoLists(l1, l2).traverseValues()).not.toStrictEqual([2, 3, 4, 5, 5, 6, 7, 9]);
+    const solution = new SinglyLinkedList();
+    solution.push(2);
+    solution.push(3);
+    solution.push(4);
+    solution.push(5);
+    solution.push(5);
+    solution.push(6);
+    solution.push(7);
+    solution.push(9);
+
+    expect(mergeTwoLists(l1, l2)).not.toStrictEqual(solution);
   });
 
 });
