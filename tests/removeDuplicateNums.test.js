@@ -13,6 +13,11 @@ describe('removeDuplicateNums Tests', () => {
   test('It returns 0 when an empty array is input', () => {
     expect(removeDuplicateNums([])).toBe(0);
   });
+
   // need to add testing to ensure O(1) memory complexity
-  
+  xtest('It does not create a new array', () => {
+    // need mock or spyOn to get inside function
+    removeDuplicateNums([1, 2, 3, 3, 3]);
+    expect(removeDuplicateNums([1, 2, 3, 3, 3])).toContain(nums);
+  });
 });
