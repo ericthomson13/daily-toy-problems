@@ -47,8 +47,25 @@ for (int i = 0; i < len; i++) {
 
 */
 
-const removeElement = (nums, val) => {
-
+export const removeElementInPlace = (nums, val) => {
+  let i = 0;
+  while ( i < nums.length) {
+    if (nums[i] === val) {
+      nums.splice(i, 1);
+    } else {
+      i++
+    }
+  }
+  return nums.length;
 };
 
-export default removeElement;
+// below does not meet the space complexity requirement
+// exporting both to test which is more time performant with larger arrays
+// think below will be more time performant because not constantly having to re-index the array
+
+export const removeElementNotInPlace = (nums, val) => {
+  return nums.filter((num) => num !== val);
+};
+
+
+
