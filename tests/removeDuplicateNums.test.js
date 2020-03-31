@@ -14,6 +14,12 @@ describe('removeDuplicateNums Tests', () => {
     expect(removeDuplicateNums([])).toBe(0);
   });
 
+  test('It modifies the input array', () => {
+    const nums = [ 1, 2, 3, 3, 4];
+    removeDuplicateNums(nums);
+    expect(nums).toStrictEqual([1, 2, 3, 4]);
+  });
+  
   // need to add testing to ensure O(1) memory complexity
   xtest('It does not create a new array', () => {
     // need mock or spyOn to get inside function
