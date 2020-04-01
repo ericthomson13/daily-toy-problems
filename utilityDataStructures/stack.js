@@ -1,6 +1,6 @@
 class Node {
-  constructor (value) {
-    this.value = value;
+  constructor (val) {
+    this.val = val;
     this.next = null;
   }
 }
@@ -12,15 +12,15 @@ class Stack {
     this.size = 0;
   }
 
-  push (value) {
-    const newNode = new Node(value);
+  push (val) {
+    const newNode = new Node(val);
     if (!this.first) {
       this.first = newNode;
       this.last = newNode;
     } else {
-      let temp = this.first;
-      this.first = newNode;
-      this.first.next = temp;
+      let temp = this.last;
+      this.last = newNode;
+      this.last.next = temp;
       this.size++;
     }
   }
@@ -29,13 +29,13 @@ class Stack {
     if (!this.first) {
       return null;
     }
-    let popped = this.first;
+    let popped = this.last;
     if (this.first === this.last) {
       this.last = null;
     }
-    this.first = this.first.next;
+    this.last = this.last.next;
     this.size--;
-    return popped.value;
+    return popped.val;
   }
 };
 

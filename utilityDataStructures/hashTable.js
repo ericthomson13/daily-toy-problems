@@ -7,9 +7,6 @@ class HashTable {
 
   _hash (string, arrayLength) {
     let total = 0;
-    // many use prime numbers because it decreases numbers of collisions
-      // and this helps better spread the data throughout the hashTable
-      // prime number arrayLength also can decrease collisions by many orders of magnitude
     let WEIRD_PRIME = 31;
     for (let i = 0; i < Math.min(key.length, 100); i++) {
       let char = key[i];

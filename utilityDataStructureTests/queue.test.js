@@ -39,7 +39,7 @@ describe('Queue Testing Suite', () => {
     expect(newQueue.dequeue()).toBe(0);
   });
 
-  test('Dequeue has the length of the number of items enqueued and dequeued a random number', () => {
+  test('Dequeue has the size of items enqueued and dequeued a random number', () => {
     let i = 0;
     for (i; i < 10; i++) {
       newQueue.enqueue(i);

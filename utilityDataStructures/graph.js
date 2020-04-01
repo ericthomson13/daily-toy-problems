@@ -6,7 +6,6 @@ class Graph {
   }
 
   addVertex (vertex) {
-    // this will overwrite if that vertex already exists
     if (!this.adjacencyList[vertex]) {
       this.adjacencyList[vertex] = [];
       return true;
@@ -36,8 +35,6 @@ class Graph {
   }
 
   removeVertex (vertex) {
-    // need to loop for each vertex to remove the edges
-    // need to remove the key from adjacencyList
     if (this.adjacencyList[vertex]) {
       while(this.adjacencyList[vertex].length) {
         const adjacenctVertex = this.adjacencyList[vertex].pop();
@@ -50,12 +47,7 @@ class Graph {
     }
   }
 
-  // with graph need to specify start because no root node
   DFSRecursive (start) {
-    // follows 1 neighbor at a time before following the rest of the neighbors
-    // have to put some order to decide what order neighbors are visited in 
-    // have to write code to pay attention to how many 
-      //times revisited each node so don't infinite loop
     const visited = {};
     const result = [];
     const adjacencyList = this.adjacencyList;
@@ -74,30 +66,15 @@ class Graph {
 
   // with graph need to specify start because no root node
   DFSIterative (start) {
-    // follows 1 neighbor at a time before following the rest of the neighbors
-    // have to put some order to decide what order neighbors are visited in 
-    // have to write code to pay attention to how many 
-      //times revisited each node so don't infinite loop
-    // create a stack
-      // add start to stack
-    const stack = [start];
     const visited = {};
     const result = [];
-    // avoids constantly initializing this inside while loop
     let currentVert;
-    // add start to visited
     visited[start] = true;
-    // loop over stack
     while(stack.length) {
-      // pull off stack
       currentVert = stack.pop();
-      // add what pulled off stack to result
       result.push(currentVert);
-      // iterates through each edge of current 
       this.adjacencyList[currentVert].forEach(neighbor => {
-        // checks if visisted
         if (!visited[neighbor]){
-          // adds to visited and adds to stack 
           visited[neighbor] = true;
           stack.push(neighbor);
         }
@@ -115,13 +92,9 @@ class Graph {
     let currentVert;
     while (queue.length) {
       currentVert = queue.shift();
-      // add what pulled off stack to result
       result.push(currentVert);
-      // iterates through each edge of current 
       this.adjacencyList[currentVert].forEach(neighbor => {
-        // checks if visisted
         if (!visited[neighbor]){
-          // adds to visited and adds to stack 
           visited[neighbor] = true;
           queue.push(neighbor);
         }
