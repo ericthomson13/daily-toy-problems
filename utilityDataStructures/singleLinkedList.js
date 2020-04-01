@@ -81,7 +81,7 @@ class SinglyLinkedList {
   set (val, index) {
     let foundNode = this.get(index);
     if(foundNode) {
-      found.val = val;
+      foundNode.val = val;
       return true;
     }
     return false;
@@ -95,6 +95,7 @@ class SinglyLinkedList {
     let previous = this.get(index - 1);
     let temp = previous.next;
     newNode.next = temp;
+    previous.next = newNode;
     this.length++;
     return true;
   }
@@ -134,6 +135,7 @@ class SinglyLinkedList {
     }
     return values;
   }
+
 }
 
 export default SinglyLinkedList;
