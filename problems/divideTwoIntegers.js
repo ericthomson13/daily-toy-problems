@@ -37,11 +37,15 @@ Information on how to use bitwise operators:
      the following res will be 1 << 31, too, which will turn into 2147483648 
      after we add a sign in front of it (at the return part), and get a wrong answer.
 */
-const divide = (dividend, divisor) => {
-  if(dividend === -2147483648 && divisor === -1) return 2147483647;
-  if(dividend === -2147483648 && divisor === 1) return dividend;
+
+// Constraints from LeetCode lend this solution to using bit operators
+export const divideBit = (dividend, divisor) => {
+  if (dividend === 0 || divisor === 0) return undefined;
+  if (dividend > 2147483648 || divisor > 2147483648) return 'Invalid Input Integer Larger than 32-bit';
+  if (dividend === -2147483648 && divisor === -1) return 2147483647;
+  if (dividend === -2147483648 && divisor === 1) return dividend;
   let a = Math.abs(dividend), b = Math.abs(divisor), res = 0;
-  for(let i=31; i>=0; i--){
+  for (let i=31; i>=0; i--) {
     if(Math.abs(a >> i) - b >=0){
       res += 1 << i;
       a -= (b << i);
@@ -50,4 +54,26 @@ const divide = (dividend, divisor) => {
   return (dividend > 0) ^ (divisor > 0) ? -res : res;
 };
 
-export default divide;
+// work in progress below
+// // This solution is simpler and doesn't need bit operators, which I still don't understand very well
+// export const divideNonBit = (dividend, divisor) => {
+//   // edge cases are the same 
+//   if (dividend === 0 || divisor === 0) return undefined;
+//   if (dividend > 2147483648 || divisor > 2147483648) return 'Invalid Input Integer Larger than 32-bit';
+//   if (dividend === -2147483648 && divisor === -1) return 2147483647;
+//   if (dividend === -2147483648 && divisor === 1) return dividend;
+//   if (divisor === 1) return dividend;
+//   if (divisor === -1) return -dividend;
+//   let res = 0, neg = null;
+//   if ((divisor < 0 && dividend > 0) || (divisor > 0 && dividend < 0)) {
+//     neg = true;
+//   } else {
+//     neg = false;
+//   }
+//   while (divisor < dividend) {
+//     res++;
+//     dividend -= divisor;
+//   }
+//   // adjust to see if divisor > half of dividend so that can add to res
+//   return neg ? -res : res;
+// };
