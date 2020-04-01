@@ -1,5 +1,7 @@
 import bubbleSort from '../problems/bubbleSort';
 
+
+// TODO: figure out ways to test more options
 describe('bubbleSort Testing Suite', () => {
   let randomArray = [];
   beforeEach(() => {
@@ -9,7 +11,6 @@ describe('bubbleSort Testing Suite', () => {
       randomArray.push(random);
     }
   });
-  // check that sorts values
   test('Sorts the input array', () => {
     const defaultSort = [...randomArray].sort((a, b) => a < b ? -1 : 1);
     expect(bubbleSort(randomArray)).toStrictEqual(defaultSort);
