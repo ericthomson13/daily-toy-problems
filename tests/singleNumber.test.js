@@ -5,6 +5,7 @@ import { singleNumberOne, singleNumberTwo } from '../problems/singleNumber';
   // Don't think that tests are written properly for checking random number that is out of range is the only single number
 
 describe('singleNumberOne Testing', () => {
+
   test('Returns invalid input if string is input', () => {
     expect(singleNumberOne('string')).toBe('invalid input');
   });
@@ -41,6 +42,7 @@ describe('singleNumberOne Testing', () => {
 });
 
 describe('singleNumberTwo Testing', () => {
+  
   test('Returns invalid input if string is input', () => {
     expect(singleNumberTwo('string')).toBe('invalid input');
   });
