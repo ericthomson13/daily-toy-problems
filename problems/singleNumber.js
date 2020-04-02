@@ -22,22 +22,26 @@ Output: 4
 */
 
 export const singleNumberOne = (nums) => {
+  if (!Array.isArray(nums)) return 'invalid input';
+  if (nums.length === 0) return null;
   const vals = {};
   for (let i = 0; i < nums.length; i++) {
-      if (!vals[nums[i]]) {
-          vals[nums[i]] = true;
-      } else {
-          vals[nums[i]] = false;
-      }
+    if (!vals[nums[i]]) {
+      vals[nums[i]] = true;
+    } else {
+      vals[nums[i]] = false;
+    }
   }
- let result = null;
- for (let key in vals) {
-     if (vals[key] === true) result = key;
- }
- return result;
+  let result = null;
+  for (let key in vals) {
+  if (vals[key] === true) result = key;
+  }
+  return parseInt(result);
 }
 
 export const singleNumberTwo = (nums) => {
+  if (!Array.isArray(nums)) return 'invalid input';
+  if (nums.length === 0) return null;
   return nums.filter((num) => nums.indexOf(num) == nums.lastIndexOf(num))[0];
 };
 
