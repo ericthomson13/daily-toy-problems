@@ -42,6 +42,12 @@ export const singleNumberOne = (nums) => {
 export const singleNumberTwo = (nums) => {
   if (!Array.isArray(nums)) return 'invalid input';
   if (nums.length === 0) return null;
-  return nums.filter((num) => nums.indexOf(num) == nums.lastIndexOf(num))[0];
+  let result = nums.filter((num) => {
+    let index = nums.indexOf(num);
+    let last = nums.lastIndexOf(num);
+    return index > -1 ? index === last : false;
+  });
+  if (result.length > 1) return 'invalid input array';
+  return result[0];
 };
 
