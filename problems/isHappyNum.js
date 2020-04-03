@@ -21,6 +21,7 @@ Explanation:
 */
 
 const happyNumber = (num) => {
+  if (typeof num !== 'number') return 'invalid input';
   if (num === 1) return true;
   const seen = new Set();
   let current = num.toString();
@@ -29,7 +30,7 @@ const happyNumber = (num) => {
     let next = calulator(current);
     if (next === 1) return true;
     seen.add(current);
-    current = next;
+    current = next.toString();
   }
   return false;
 };
