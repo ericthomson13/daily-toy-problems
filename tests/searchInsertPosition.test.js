@@ -8,7 +8,7 @@ import {
   returnAboveZero,
   indexTargetExists,
   indexTargetNonExist,
-} from '../testData/searchInsertPositionData';
+} from '../testsData/searchInsertPositionData';
 
 describe('searchInsertPosition Tests', () => {
 
