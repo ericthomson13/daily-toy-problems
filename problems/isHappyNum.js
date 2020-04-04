@@ -25,7 +25,7 @@ const happyNumber = (num) => {
   if (num === 1) return true;
   const seen = new Set();
   let current = num.toString();
-  const calulator = (n) => n.split('').reduce((a,b) => a + parseInt(b) ** 2, 0);
+  const calulator = (n) => n.split('').reduce((a,b) => a + Math.pow(parseInt(b), 2), 0);
   while (!seen.has(current)) {
     let next = calulator(current);
     if (next === 1) return true;

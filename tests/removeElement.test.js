@@ -1,5 +1,7 @@
 import { removeElementInPlace, removeElementNotInPlace, } from '../problems/removeElement';
 
+
+// TODO: update time testing using BenchmarkJS (https://benchmarkjs.com/)
 describe('RemoveElementInPlace Tests', () => {
 
   test('It returns the expected length of an array where no nums were removed', () => {
