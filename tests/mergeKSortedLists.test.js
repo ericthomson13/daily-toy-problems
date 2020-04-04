@@ -10,6 +10,8 @@ import {
   longerTestSolution,
 } from '../testsData/mergeKSortedListsData';
 
+// TODO: figure out Javascript heap size issue with larger lists
+
 describe('mergeKSortedLists Tests', () => {
 
   test.each(invalidInputs)(`Returns 'invalid input' when input is not Array`, (i) => {
