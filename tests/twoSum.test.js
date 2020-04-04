@@ -98,7 +98,7 @@ describe('twoSumO1 Tests', () => {
   });
 });
 
-describe('Testing relative performance with large arrays expect twoSumO1 to be faster', () => {
+describe('Testing time performance with large arrays expect twoSumO1 to be faster', () => {
   const arr = [];
   for ( let i = 0; i < 2000; i++) {
     arr.push(i);
