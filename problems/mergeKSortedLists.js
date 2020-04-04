@@ -26,7 +26,8 @@ Used mergeTwoLists as a helper function because exact same code
 
 import mergeTwoLists from './mergeTwoLists';
 
-const mergeKLists = (lists) => {
+const mergeKSortedLists = (lists) => {
+  if (!Array.isArray(lists)) return 'invalid input';
   if (lists.length === 0) return null;
   
   let merged = [];
@@ -52,4 +53,4 @@ const mergeKLists = (lists) => {
   return lists[0];
 };
 
-export default mergeKLists;
+export default mergeKSortedLists;
