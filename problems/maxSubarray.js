@@ -26,14 +26,18 @@ Resources:
   https://www.codechef.com/wiki/tutorial-dynamic-programming
   https://en.wikipedia.org/wiki/Dynamic_programming
   https://www.tutorialspoint.com/dynamic-programming-in-javascript
+  https://afshinm.name/2018/06/24/why-kadane-algorithm-works/
 */
 
 
-// difference between without and with filter/reduce option on leetcode was 60ms v 64ms
+// difference between without and with filter/reduce option on leetcode was 60ms v 68ms
 
-const maxSubArray = (nums) => {
+// TODO: separate with and without filter/reduce and test with small and large arrays
+
+const maxSubarray = (nums) => {
+  if (nums.length === 0) return 0;
   if (nums.length === 1) return nums[0];
-  if (nums.filter((num) => num >= 0).length === nums.length) {
+  if (nums.filter((num) => num > 0).length === nums.length) {
       return nums.reduce((a, b) => a + b, 0);
   }  
   let max = nums[0];
@@ -47,4 +51,4 @@ const maxSubArray = (nums) => {
   return max;
 };
 
-export default maxSubArray;
+export default maxSubarray;
