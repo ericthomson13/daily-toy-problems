@@ -22,18 +22,28 @@ Resources:
   Kadane's Algorithm:
   https://hackernoon.com/kadanes-algorithm-explained-50316f4fd8a6
 
+  What a Dynamic Programming Approach is:
+  https://www.codechef.com/wiki/tutorial-dynamic-programming
+  https://en.wikipedia.org/wiki/Dynamic_programming
+  https://www.tutorialspoint.com/dynamic-programming-in-javascript
 */
+
+
+// difference between without and with filter/reduce option on leetcode was 60ms v 64ms
 
 const maxSubArray = (nums) => {
   if (nums.length === 1) return nums[0];
+  if (nums.filter((num) => num >= 0).length === nums.length) {
+      return nums.reduce((a, b) => a + b, 0);
+  }  
   let max = nums[0];
   const loc = Array(nums.length);
   loc[0] = nums[0];
   
   for (let i = 1; i < nums.length; i++) {
-    loc[i] = nums[i] + Math.max(0, loc[i -1]);
-    max = Math.max(loc[i], max);
-  }   
+      loc[i] = nums[i] + Math.max(0, loc[i -1]);
+      max = Math.max(loc[i], max);
+  }
   return max;
 };
 
