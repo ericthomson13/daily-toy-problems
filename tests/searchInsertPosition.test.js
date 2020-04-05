@@ -12,8 +12,8 @@ import {
 
 describe('searchInsertPosition Tests', () => {
 
-  test.each(invalidInputs)(`Returns 'invalid input' when either input is invalid`, (i, o) => {
-    expect(searchInsertPosition(i[0], i[1])).toBe(o);
+  test.each(invalidInputs)(`Returns 'invalid input' when either input is invalid`, (i) => {
+    expect(searchInsertPosition(i[0], i[1])).toBe('invalid input');
   });
 
   test.each(emptyArraysPos)(`Returns 0 as insert position when empty array with positive target`, (i, o) => {

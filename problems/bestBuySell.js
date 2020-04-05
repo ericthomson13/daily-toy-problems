@@ -33,7 +33,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 */
 
 const maxProfit = (prices) => {
-  if (!Array.isArray(prices)) return 'invalid input';
+  if (!Array.isArray(prices) || prices.length === 0) return 'invalid input';
 
   let result = 0;
   let prev = prices[0];
@@ -42,7 +42,7 @@ const maxProfit = (prices) => {
       result += Math.max(prices[i] - prev, 0);
       prev = prices[i];
   }
-  
+
   return result;
 };
 

@@ -1,10 +1,12 @@
+// TODO: refactor invalidInputs to use notTypeData instead
+
 export const invalidInputs = [
-  [['nums', 8], 'invalid input'],
-  [[{}, 9], 'invalid input'],
-  [[0, 5], 'invalid input'],
-  [[[0,1, 2, 3], 'target'], 'invalid input'],
-  [[[0,1, 2, 3], {}], 'invalid input'],
-  [[[0,1, 2, 3], []], 'invalid input'],
+  [['nums', 8], ],
+  [[{}, 9], ],
+  [[0, 5], ],
+  [[[0,1, 2, 3], 'target'], ],
+  [[[0,1, 2, 3], {}], ],
+  [[[0,1, 2, 3], []], ],
 ];
 
 export const emptyArraysPos = [
