@@ -1,10 +1,3 @@
-export const notArray = [
-  ['string'],
-  [true],
-  [false],
-  [{}],
-  [0],
-];
 
 export const validInputs = [
   [[0, 0, 0, 1, 4, 32, 76, 34,], [1, 4, 32, 76, 34, 0, 0, 0]],

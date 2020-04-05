@@ -1,5 +1,6 @@
 import moveZeros from '../problems/moveZeros';
-import { notArray, validInputs, } from '../testsData/moveZerosData';
+import { validInputs, } from '../testsData/moveZerosData';
+import { notArray } from '../testsData/notTypeOfData';
 
 describe('moveZeros Tests', () => {
 

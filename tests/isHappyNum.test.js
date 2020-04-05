@@ -1,5 +1,6 @@
 import isHappyNum from '../problems/isHappyNum';
-import { notNumbers, happyNums, biggerHappyNums, } from '../testsData/isHappyNumData';
+import { happyNums, biggerHappyNums, } from '../testsData/isHappyNumData';
+import { notNumbers, } from '../testsData/notTypeOfData';
 
 describe('isHappyNum Tests', () => {
 

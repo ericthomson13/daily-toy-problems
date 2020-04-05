@@ -1,10 +1,11 @@
 import romanToInteger from '../problems/romanToInteger';
-import { notString, singleNumeral, multipleNumerals, smallerNumeralBefore, notRomNumerals, } from '../testData/romanToIntegerData';
+import { singleNumeral, multipleNumerals, smallerNumeralBefore, notRomNumerals, } from '../testsData/romanToIntegerData';
+import { notString, } from '../testsData/notTypeOfData';
 
 describe('Roman Numerals to Integers Tests', () => {
 
-  test.each(notString)(`It returns 'invalid input' when not a string input`, (i, o) => {
-    expect(romanToInteger(i)).toBe(o);
+  test.each(notString)(`It returns 'invalid input' when not a string input`, (i) => {
+    expect(romanToInteger(i)).toBe('invalid input');
   });
 
   test.each(singleNumeral)(`It returns the correct Integer for all single Roman Numerals`, (i, o) => {
@@ -19,7 +20,7 @@ describe('Roman Numerals to Integers Tests', () => {
     expect(romanToInteger(i)).toBe(o);
   });
   
-  test.each(notRomNumerals)(`It returns 'invalid input' when the contains non-numeral characters`, (i, o) => {
-    expect(romanToInteger(i)).toBe(o);
+  test.each(notRomNumerals)(`It returns 'invalid input' when the contains non-numeral characters`, (i) => {
+    expect(romanToInteger(i)).toBe('invalid input');
   });
 });

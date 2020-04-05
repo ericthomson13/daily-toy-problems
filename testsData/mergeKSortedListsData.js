@@ -1,13 +1,5 @@
 import SinglyLinkedList from '../utilityDataStructures/singleLinkedList';
 
-export const invalidInputs = [
-  [0],
-  ['string'],
-  [{}],
-  [true],
-  [false],
-];
-
 const _l1LeetCodeTest = new SinglyLinkedList();
 _l1LeetCodeTest.push(1);
 _l1LeetCodeTest.push(4);

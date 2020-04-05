@@ -1,11 +1,4 @@
-export const notString =[
-  [[], 'invalid input'],
-  [{}, 'invalid input'],
-  [15, 'invalid input'],
-  [false, 'invalid input'],
-  [true, 'invalid input'],
-  [new Set, 'invalid input'],
-];
+
 
 export const singleNumeral = [
   ['I', 1],
@@ -38,12 +31,12 @@ export const smallerNumeralBefore = [
 ];
 
 export const notRomNumerals = [
-  ['Q', 'invalid input'],
-  ['Z', 'invalid input'],
-  ['Y', 'invalid input'],
-  ['MCLS', 'invalid input'],
-  ['MXZ', 'invalid input'],
-  ['MAC', 'invalid input'],
-  ['MMME', 'invalid input'],
-  ['EX', 'invalid input'],
+  'Q',
+  'Z',
+  'Y',
+  'MCLS',
+  'MXZ',
+  'MAC',
+  'MMME',
+  'EX',
 ];

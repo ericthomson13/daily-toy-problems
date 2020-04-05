@@ -1,6 +1,5 @@
 import bubbleSort from '../problems/bubbleSort';
 
-
 // TODO: figure out ways to test more options
   // look into how to test that BubbleSort functions differently based on other sort options
 describe('bubbleSort Testing Suite', () => {

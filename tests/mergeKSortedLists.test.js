@@ -1,7 +1,6 @@
 import mergeKSortedLists from '../problems/mergeKSortedLists';
 
 import {
-  invalidInputs,
   leetCodeTestCase,
   leetCodeSolutionCase,
   firstTestSolution,
@@ -9,12 +8,14 @@ import {
   longerTestCase,
   longerTestSolution,
 } from '../testsData/mergeKSortedListsData';
+import { notArray } from '../testsData/notTypeOfData';
+
 
 // TODO: figure out Javascript heap size issue with larger lists
 
 describe('mergeKSortedLists Tests', () => {
 
-  test.each(invalidInputs)(`Returns 'invalid input' when input is not Array`, (i) => {
+  test.each(notArray)(`Returns 'invalid input' when input is not Array`, (i) => {
     expect(mergeKSortedLists(i)).toBe('invalid input');
   });
 
