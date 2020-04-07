@@ -42,13 +42,16 @@ Constraints:
 
 const countElements = (arr) => {
   if (!Array.isArray(arr) || arr.length === 0 || arr.length > 1000) return 'invalid input';
+
   const seen = new Set(arr);
   let result = 0;
+
   for (let i = 0; i < arr.length; i++) {
     if (seen.has(arr[i] + 1)) {
       result++;
     }
   }
+  
   return result;
 };
 

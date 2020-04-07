@@ -1,5 +1,5 @@
 import countElements from '../problems/countElements';
-import { leetCodeExamples, thousandArray, otherTestCases, } from '../testsData/countElementsData';
+import { leetCodeExamples, thousandArray, otherTestCases, bigTestCase, } from '../testsData/countElementsData';
 import { notArray, } from '../testsData/notTypeOfData';
 
 describe('countElements Tests', () => {
@@ -24,4 +24,8 @@ describe('countElements Tests', () => {
     expect(countElements(i)).toBe(o);
   });
   
+  test(`Returns the expected value when array at upper length constraint is input`, () => {
+    expect(countElements(bigTestCase[0])).toBe(bigTestCase[1]);
+  });
+
 });
