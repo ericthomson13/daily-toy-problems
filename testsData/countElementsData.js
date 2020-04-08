@@ -6,6 +6,7 @@ export const leetCodeExamples = [
 ];
 
 export const thousandArray = [];
+
 for (let i = 0; i < 1010; i++) {
   thousandArray.push(i);
 };
