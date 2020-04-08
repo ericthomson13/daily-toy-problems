@@ -5,6 +5,8 @@ export const notArray = [
   6,
   true,
   false,
+  null,
+  undefined,
 ];
 
 export const notNumbers = [
@@ -13,6 +15,8 @@ export const notNumbers = [
   [],
   true,
   false,
+  null,
+  undefined,
 ];
 
 export const notString =[
@@ -22,4 +26,17 @@ export const notString =[
   false,
   true,
   new Set,
+  null,
+  undefined,
+];
+
+export const notObject = [
+  'string',
+  // have to deal with edgecase of array typeof === 'object'
+  [],
+  true,
+  false,
+  10,
+  null,
+  undefined,
 ];

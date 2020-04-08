@@ -1,3 +1,5 @@
+import SinglyLinkedList from '../utilityDataStructures/singleLinkedList';
+
 /* 
 
 Code prompt found at:
@@ -31,7 +33,13 @@ Constraints:
 
 */
 
+// TODO: how to check if length is over 100 without using length
 export const middleNode = (list) => {
+  if (!list) return 'invalid input';
+  if (typeof list !== 'object' || Array.isArray(list)) return 'invalid input';
+  if (!(list instanceof SinglyLinkedList)) return 'invalid input';
+  if (!list.head) return 'invalid input';
+
   let slow = list.head;
   let fast = list.head;
   let second = false;
@@ -49,6 +57,13 @@ export const middleNode = (list) => {
 };
 
 export const middleNodeUsingLength = (list) => {
-  let index = Math.ceil(list.length / 2);
+  if (!list) return 'invalid input';
+  if (typeof list !== 'object' || Array.isArray(list)) return 'invalid input';
+  if (!(list instanceof SinglyLinkedList)) return 'invalid input';
+  if (!list.head) return 'invalid input';
+  if (list.length === 1) return list.head;
+
+  // doesn't pass with ceil for odd numbers 
+  let index = Math.floor(list.length / 2);
   return list.get(index);
 };

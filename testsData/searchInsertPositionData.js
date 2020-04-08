@@ -1,4 +1,4 @@
-// TODO: refactor invalidInputs to use notTypeData instead
+// TODO: refactor invalidInputs to use notTypeData instead - find way to match each of the notType to the other not type
 
 export const invalidInputs = [
   [['nums', 8], ],
