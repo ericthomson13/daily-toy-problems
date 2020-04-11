@@ -21,10 +21,16 @@ Note: The length of path between two nodes is represented by the number of edges
 
 
 This is a depth first approach, counts down both arms to create the diameter
+
 */
 
+// TODO: add in a regular Binary tree to utility structures
 
-const diameterOfBinaryTree = (root) => {
+import BinarySearchTree from '../utilityDataStructures/binarySearchTree';
+
+const diameterOfBinaryTree = (tree) => {
+  if (!(tree instanceof BinarySearchTree)) return 'input must be a tree';
+  
   let maxDiameter = 0;
 
   const diameter = (node) => {
@@ -37,7 +43,7 @@ const diameterOfBinaryTree = (root) => {
     return Math.max(maxLeft, maxRight);
   }
 
-  diameter(root);
+  diameter(tree.root);
 
   return maxDiameter;
 };
