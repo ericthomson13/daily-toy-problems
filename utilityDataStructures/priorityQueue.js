@@ -1,5 +1,5 @@
 
-class Node {
+export class Node {
   constructor (val, priority) {
     this.val = val;
     this.priority = priority;
@@ -9,50 +9,34 @@ class Node {
 
 class PriorityQueue {
   constructor () {
-    this.heap = [null];
+    this.first = null;
   }
 
   insert (val, priority) {
     const newNode = new Node(val, priority);
-    this.heap.push(newNode);
-
-    let iCurrentNode = this.heap.length - 1;
-    let iCurrentParent = Math.floor(iCurrentNode / 2);
-
-    while (this.heap[iCurrentParent] && newNode.priority > this.heap[iCurrentParent].priority) {
-      const parent = this.heap[iCurrentParent];
-      this.heap[iCurrentParent] = newNode;
-      this.heap[iCurrentNode] = parent;
-
-      iCurrentNode = iCurrentParent;
-      iCurrentParent = Math.floor(iCurrentNode / 2);
+    if (!this.first || this.first.priority < priority) {
+      newNode.next = this.first;
+      this.first = newNode;
+      return this;
     }
+
+    let current = this.first;
+
+    while (current.next && priority < current.next.priority) {
+      current = current.next;
+    }
+    newNode.next = current.next;
+    current.next = newNode;
 
     return this;
   }
 
   remove () {
-    if (this.heap.length < 3) {
-      const toReturn = this.heap.pop();
-      this.heap[0] = null;
-      return toReturn;
-    }
-
-    const toRemove = this.heap[1];
-    this.heap[1] = this.heap.pop();
-
-    let iCurrent = 1;
-
-    let [left, right] = [(2 * currentI), (2 * currentI + 1)];
-    let iCurrentChild = this.heap[right] && this.heap[right].priority >= this.heap[left].priority ? right : left;
-
-    while (this.heap[iCurrent] && this.heap[iCurrent].priority <= this.heap[iCurrentChild].priority)  {
-      let currentNode = this.heap[iCurrent];
-      let currentChildNode = this.heap[iCurrentChild];
-      this.heap[iCurrentChild] = currentNode;
-      this.heap[iCurrent] = currentChildNode;
-    }
-    return toRemove;
+    if (!this.first) return false;
+    const removed = this.first;
+    this.first = this.first.next;
+    removed.next = null;
+    return removed;
   }
 };
 

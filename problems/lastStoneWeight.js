@@ -33,10 +33,10 @@ Constraints:
 1 <= stones[i] <= 1000
 
 */
+import PriorityQueue from '../utilityDataStructures/priorityQueue';
 
-//  TODO: add solution that uses priority queue
-
-const lastStoneWeight = (stones) => {
+// Naiive solution
+export const lastStoneWeight = (stones) => {
   if (!Array.isArray(stones)) return 'invalid input';
 
   if (!stones.length) return 0;
@@ -52,4 +52,25 @@ const lastStoneWeight = (stones) => {
   return lastStoneWeight(stones);
 };
 
-export default lastStoneWeight;
+// Priority Queue Solution
+export const queueLastStoneWeight = (stones) => {
+  if (!Array.isArray(stones)) return 'invalid input';
+  if (!stones.length || stones.length === 0) return 0;
+  if (stones.length === 1) return stones[0];
+
+  const queue = new PriorityQueue();
+  for (let i = 0; i < stones.length; i++) {
+    queue.insert(stones[i], stones[i]);
+  }
+
+  while (!!queue.first.next) {
+    let first = queue.remove().val;
+    let second = queue.remove().val;
+    if (first !== second) {
+      let diff = first - second;
+      queue.insert(diff, diff);
+    }
+  }
+
+  return queue.first.val;
+};
