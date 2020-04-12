@@ -35,7 +35,10 @@ Constraints:
 */
 
 //  TODO: add solution that uses priority queue
+
 const lastStoneWeight = (stones) => {
+  if (!Array.isArray(stones)) return 'invalid input';
+
   if (!stones.length) return 0;
   if (stones.length === 1) return stones[0];
 
