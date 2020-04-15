@@ -21,6 +21,7 @@ Could you solve it with constant space complexity? (The output array does not co
 
 // Two pass solution
 export const productOfArrayTwoPass = (nums) => {
+  if (!Array.isArray(nums)) return 'invalid input';
   if (nums.length <= 2) return nums.reverse();
 
   const res = [];
@@ -39,7 +40,7 @@ export const productOfArrayTwoPass = (nums) => {
   i--;
 
   // right to left
-  for (i; i >= 0; i++) {
+  for (i; i >= 0; i--) {
     res[i] *= prod;
     prod *= nums[i];
   }
@@ -47,7 +48,9 @@ export const productOfArrayTwoPass = (nums) => {
   return res;
 };
 
+// one pass solution
 export const productOfArrayOnePass = (nums) => {
+  if (!Array.isArray(nums)) return 'invalid input';
   if (nums.length <= 2) return nums.reverse();
 
   const res = [];
@@ -55,13 +58,13 @@ export const productOfArrayOnePass = (nums) => {
   let prodR = 1;
 
   for (let i = 0; i < nums.length; i++) {
-    (res[i] || res[i] === 0 )? res[i] *= prodR : res[i] = prodR;
+    (res[i] || res[i] === 0 ) ? res[i] *= prodL : res[i] = prodL;
     prodL *= nums[i];
 
-    let leftLoc = nums.length - i - 1;
+    let rightLoc = nums.length - i - 1;
 
-    (res[leftLoc] || res[leftLoc]) ? res[leftLoc] *= prodR : res[leftLoc] = prodR;
-    prodR *= nums[leftLoc];
+    (res[rightLoc] || res[rightLoc] === 0) ? res[rightLoc] *= prodR : res[rightLoc] = prodR;
+    prodR *= nums[rightLoc];
   }
 
   return res;
