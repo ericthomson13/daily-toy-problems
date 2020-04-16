@@ -27,42 +27,44 @@ The string size will be in the range [1, 100].
 
 */
 
-// Brute Force Solution with ~O(3^N)
+// Brute Force Solution with ~O(3^N) LeetCode Runtime = 2752ms
 export const validParenthesisForce = (s) => {
   if (s === '') return true;
   let isValid = false;
     
-  const checkValid = (lefts, string) => {
-      if (isValid) return;
-      
-      if (!string.length) {
-          isValid = !lefts;
-          return;
+  const checkValid = (string, lefts = 0) => {
+    if (isValid) return;
+    
+    if (!string.length) {
+      isValid = !lefts;
+      return;
+    }
+    
+    const [char, remain] = [string[0], string.slice(1)];
+    if (char === '(') {
+      checkValid(remain, lefts + 1);
+    } else if (char === ')') {
+      if (lefts > 0) {
+        checkValid(remain, lefts - 1);
       }
-      
-      const [char, remain] = [string[0], string.slice(1)];
-      
-      if (char === '(') {
-          checkValid(lefts + 1, remain);
-      } else if (char === ')') {
-          if (lefts > 0) {
-              checkValid(lefts - 1, remain);
-          }
-      } else if (char === '*') {
-          checkValid(lefts, '(' + remain);
-          checkValid(lefts, ')' + remain);
-          checkValid(lefts, remain);
-      }
+    } else if (char === '*') {
+      checkValid('(' + remain, lefts);
+      checkValid(')' + remain, lefts);
+      checkValid(remain, lefts);
+    }
   }
   
-  checkValid(0, s);
+  checkValid(s);
   
   return isValid;
 };
 
-// Less thuggy of a solution
-
+// Less thuggy of a solution Leet Code Runtime = 52ms
 export const validParenthesisMath = (s) => {
+  if (s === '') return true;  
+  
+  if (!s) return false;
+  
   let left = 0, 
   right = 0,
   star = 0,
@@ -86,6 +88,6 @@ export const validParenthesisMath = (s) => {
 
   if (left > right + star) return false;
   if (right > left + star + maybeLeft) return false;
-  
+
   return true;
 };
