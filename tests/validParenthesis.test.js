@@ -26,8 +26,8 @@ describe('Valid Parenthesis Math Tests', () => {
 
 });
 
-// Brute Force tests commented out because too inefficient once Data was Cleaned up.
-xdescribe('Valid Parenthesis Brute Force Tests', () => {
+// Some tests skipped because too inefficient for long 
+describe('Valid Parenthesis Brute Force Tests', () => {
 
   test('Returns true when given empty string', () => {
     expect(validParenthesisForce('')).toBe(true);
@@ -37,7 +37,7 @@ xdescribe('Valid Parenthesis Brute Force Tests', () => {
     expect(validParenthesisForce(i)).toBe(o);
   });
 
-  test('Returns true for longExampleTrue', () => {
+  xtest('Returns true for longExampleTrue', () => {
     expect(validParenthesisForce(longExampleTrue)).toBe(true);
   });
 
