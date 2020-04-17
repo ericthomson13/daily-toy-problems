@@ -33,7 +33,13 @@ class Stack {
     if (this.first === this.last) {
       this.last = null;
     }
-    this.last = this.last.next;
+    if (this.last.next) {
+      this.last = this.last.next
+    } else {
+      this.last = null
+      this.first = null;
+    }
+    
     this.size--;
     return popped.val;
   }
