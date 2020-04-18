@@ -54,7 +54,7 @@ const minPathSum = (input) => {
   }
 
   // return bottom right corner
-  return grid[grid.length][grid[0].length];
+  return matrix[matrix.length - 1][matrix[0].length - 1];
 };
 
 export default minPathSum;
