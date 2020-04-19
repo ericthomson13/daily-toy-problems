@@ -35,7 +35,7 @@ const search = (nums, target) => {
 
   while (left < right) {
     if (nums[left] <= nums[pivot]) {
-      if (nums[left] <= target && nums[pivot] <= target) {
+      if (nums[left] <= target && target <= nums[pivot]) {
         right = pivot;
       } else {
         left = pivot + 1;
