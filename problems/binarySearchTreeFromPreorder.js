@@ -22,9 +22,11 @@ The values of preorder are distinct.
 */
 
 
-function TreeNode(val) {
-  this.val = val;
-  this.left = this.right = null;
+export class TreeNode {
+  constructor(val){
+    this.val = val;
+    this.left = this.right = null;
+  }
 };
 
 const bstFromPreorder = (preorder) => {
