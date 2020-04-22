@@ -32,3 +32,5 @@ const subarraySum = (nums, k) => {
 
   return res;
 }
+
+export default subarraySum;
