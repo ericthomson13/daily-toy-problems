@@ -18,6 +18,8 @@ Output: 0
 
 */
 
+// working on better understanding of bitwise operators but still don't fully understand
+
 const rangeBitwiseAnd = (m, n) => {
   let res = m;
 
