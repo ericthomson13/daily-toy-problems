@@ -6,3 +6,6 @@ export const leetCodeTest2 = [1,1,2,2,0,1,1];
 
 export const leetCodeTest3 = [2,3,1,1,4];
 
+export const leetCodeTest4 = [3,2,1,0,4];
+
+export const leetCodeTest5 = [2, 0];
