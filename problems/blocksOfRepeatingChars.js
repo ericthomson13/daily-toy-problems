@@ -1,6 +1,11 @@
+/*
+
+This was seen on an interview
 
 
-function solution(S, K) {
+*/
+
+const repeatingChars = (S, K) => {
   // edge cases of S being empty or K being 0
   if (!S.length) return 0;
   if (K === 0) return S.length;
