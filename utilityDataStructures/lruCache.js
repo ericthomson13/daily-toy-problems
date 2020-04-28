@@ -62,5 +62,4 @@ class LRUCache {
     }
     return this.ptrs[val];
   }
-
 }
