@@ -44,21 +44,23 @@ class LRUCache {
   }
 
   get(val) {
+    if (!this.ptrs[val]) return false;
     if (this.ptrs[val]) {
       if (this.ptrs[val].prev && this.ptrs[val].next) {
         this.ptrs[val].prev.next = this.ptrs[val].next;
         this.ptrs[val].next.prev = this.ptrs[val].prev;
       } else if (this.tail.val === val) {
+        // creates loop
         this.tail.next = this.head;
         this.head.prev = this.tail;
 
+        // changes head to new head
         this.head = this.tail;
         this.tail = this.tail.prev;
         this.head.prev = null;
       }
-      }
-      return this.ptrs[val]
     }
+    return this.ptrs[val];
   }
 
 }
