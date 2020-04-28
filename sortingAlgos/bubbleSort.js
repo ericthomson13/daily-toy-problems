@@ -1,9 +1,11 @@
 const bubbleSort = (arr) => {
+  if (!arr.length) return arr;
+
   let swapCounter = 1;
   let swapIndex = 0;
 
   const swap = (arr, i) => {
-    const temp = arr[i];
+    let temp = arr[i];
     arr[i] = arr[i + 1];
     arr[i + 1] = temp;
   };
@@ -16,9 +18,9 @@ const bubbleSort = (arr) => {
         if (swapCounter === 0) {
           swapIndex = i - 1;
         }
+        swapCounter++;
+        swap(arr, i);
       }
-      swapCounter++;
-      swap(arr, i);
     }
   }
 
