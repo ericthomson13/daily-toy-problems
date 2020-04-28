@@ -2,4 +2,3 @@ longest common subsequence
 maximal sqaure
 blocks of repeating chars
 LRU cache
-First Unique Number

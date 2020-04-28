@@ -71,3 +71,34 @@ At most 50000 calls will be made to showFirstUnique and add.
 
 */
 
+class FirstUnique {
+  uniqueSet = new Set();
+  numSet = new Set();
+
+  constructor (nums = []) {
+    nums.forEach((num) => this.add(num));
+  }
+
+  add (val) {
+
+  }
+
+  showFirstUnique () {
+    if (!this.uniqueSet.size) return -1;
+
+    for (const first of this.uniqueSet) {
+      return first;
+    }
+  }
+
+  add (val) {
+    if (this.numSet.has(val)) {
+      this.uniqueSet.delete(val);
+    } else {
+      this.numSet.add(val);
+      this.uniqueSet.add(val)
+    }
+  }
+}
+
+export default FirstUnique;
