@@ -2,3 +2,8 @@ longest common subsequence
 maximal sqaure
 blocks of repeating chars
 LRU cache Testing
+
+sorting Algos
+  notes about efficiency in Algos
+
+Dijkstras Algos
