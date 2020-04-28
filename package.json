@@ -4,7 +4,7 @@
   "description": "Repository for daily toy problems to kick the day off with",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "tests": "jest",
     "test-new": "jest -o",
     "watch": "jest --watch"
   },

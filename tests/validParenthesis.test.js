@@ -26,7 +26,7 @@ describe('Valid Parenthesis Math Tests', () => {
 
 });
 
-// Some tests skipped because too inefficient for long 
+// Some tests skipped because too inefficient for long
 describe('Valid Parenthesis Brute Force Tests', () => {
 
   test('Returns true when given empty string', () => {
