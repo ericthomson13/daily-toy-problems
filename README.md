@@ -17,5 +17,5 @@ npm install
 Tests solution code by runing Jest using:
 
 ```bash
-npm run test
+npm run tests
 ```
