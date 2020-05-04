@@ -5,6 +5,10 @@ Insertion Sort
 This builds up the sort by gradually creating a left portion that is always sorted
 
 Take each element and places it where it should go in the sorted portion of the array
+
+Big O is quadratic
+
+Works well with nearly sorted data and data that may be streamed or live
 */
 
 const insertionSort = (arr) => {
