@@ -5,6 +5,7 @@ Selection Sort
 Similar to bubble sort but places small values into sorted position instead of large values
 Takes finds minimum value and moves to the front
 
+Not very time efficient but swaps in place so not very memory heavy
 */
 
 const selectionSort = (arr) => {
