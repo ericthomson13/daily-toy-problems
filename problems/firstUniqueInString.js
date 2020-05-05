@@ -51,4 +51,6 @@ const firstUnique = (s) => {
   }
 
   return -1;
-}
+};
+
+export default firstUnique;
