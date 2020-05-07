@@ -25,9 +25,9 @@ Input: [[1,4],[0,0]]
 Output: [[0,0],[1,4]]
 */
 
-// TODO: get working with Example 4
-
 const merge = (intervals) => {
+  intervals = intervals.sort((a, b) => a[0] < b[0] ? -1 : 1);
+
   let i = 0;
   let j = 1;
 
@@ -35,6 +35,7 @@ const merge = (intervals) => {
     if (intervals[i][1] >= intervals[j][0]) {
       let min = Math.min(intervals[i][0], intervals[j][0]);
       let max = Math.max(intervals[i][1], intervals[j][1]);
+
       intervals[i] = [min, max];
       intervals.splice(j, 1);
     } else {
