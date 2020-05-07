@@ -1,4 +1,4 @@
-import minStack from '../problems/minStack';
+import minStack from '../problems/marchApril2020/minStack';
 
 export const leetCodeExample1 = new minStack();
 
