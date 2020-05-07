@@ -34,29 +34,7 @@ Each node has a unique integer value from 1 to 100.
 */
 
 const cousinsInTree = (root, x, y) => {
-  if (!x || !y) return false;
-  if (x === y) return false;
-  if (!root.left || !root.right) return false;
 
-  let depthX = 0;
-  let depthY = 0;
-
-  const depthFinder = (node, target, depth) => {
-    if (!node) return;
-
-    if (node.val === target) {
-      depth++;
-      return;
-    };
-
-    depthFinder(node.right);
-    depthFinder(node.left);
-  }
-
-  depthFinder(root, x, depthX);
-  depthFinder(root, y, depthY);
-
-  return depthX === depthY;
 };
 
 export default cousinsInTree;
