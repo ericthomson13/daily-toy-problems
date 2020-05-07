@@ -2,8 +2,12 @@ longest common subsequence
 maximal sqaure
 blocks of repeating chars
 LRU cache Testing
+Cousins In Binary Tree
+
 
 sorting Algos
   notes about efficiency in Algos
+  quick
+  radix
 
 Dijkstras Algos
