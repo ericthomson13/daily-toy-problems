@@ -3,8 +3,6 @@ maximal sqaure
 blocks of repeating chars
 LRU cache Testing
 Cousins In Binary Tree Solution and Testing
-Merge Intervals Complete Edge Case Solution
-Merge Intervals Testing
 
 sorting Algos
   notes about efficiency in Algos

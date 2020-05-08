@@ -31,7 +31,7 @@ const merge = (intervals) => {
   let i = 0;
   let j = 1;
 
-  while (i < intervals.length - 1 && j < intervals.length) {
+  while (j < intervals.length) {
     if (intervals[i][1] >= intervals[j][0]) {
       let min = Math.min(intervals[i][0], intervals[j][0]);
       let max = Math.max(intervals[i][1], intervals[j][1]);
@@ -39,8 +39,8 @@ const merge = (intervals) => {
       intervals[i] = [min, max];
       intervals.splice(j, 1);
     } else {
-      j++;
       i++;
+      j++;
     }
   }
 
