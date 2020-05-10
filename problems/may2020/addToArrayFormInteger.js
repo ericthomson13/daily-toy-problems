@@ -87,4 +87,6 @@ const addToArrayForm = (A, K) => {
   }
 
   return res;
-}
+};
+
+export default addToArrayForm;
