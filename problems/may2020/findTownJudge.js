@@ -38,15 +38,27 @@ Output: 3
 */
 
 const findJudge = (N, trust) => {
-  const judge = new Array(N + 1).fill(0);
+  if (N ===1 ) return N;
+  if (trust.length < N - 1) return -1;
+
+  const given = {};
+  const received = {};
 
   for (let [num, trusts] of trust) {
-    judge[num]--;
-    judge[trusts]++;
+    if (num in given) {
+      given[num]++;
+    } else {
+      given[num] = 1;
+    }
+    if (trusts in received) {
+      received[trusts]++;
+    } else {
+      received[trusts] = 1;
+    }
   }
 
   for (let i = 1; i <= N; i++) {
-    if (judge[i] === N - 1) return i;
+    if (!given[i] && received[i] === N - 1) return i;
   }
 
   return -1;
