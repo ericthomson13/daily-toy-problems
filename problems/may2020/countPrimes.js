@@ -15,6 +15,11 @@ Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
 */
 
 // below doesn't run fast enough for LeetCode testing timeout with n = 499979
+
+/**
+ * @param {number} n
+ */
+
 const countPrimes = (n) => {
   const primes = [];
 
