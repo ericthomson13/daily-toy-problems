@@ -22,13 +22,15 @@ You can assume that you can always reach the last index.
 
 */
 
-//Naiive approach
 /**
  * @param {number[]} nums
  * @return {number}
 */
 
-const jump = function(nums) {
+//Naiive approach
+
+
+const jumpGameII = (nums) => {
   if (nums == null || !nums.length) return false;
 
   let jumps = 0;
@@ -45,3 +47,5 @@ const jump = function(nums) {
 
   return jumps;
 };
+
+export default jumpGameII;
