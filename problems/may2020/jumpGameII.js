@@ -31,7 +31,7 @@ You can assume that you can always reach the last index.
 
 
 const jumpGameII = (nums) => {
-  if (nums == null || !nums.length) return false;
+  if (nums.length < 2) return 0;
 
   let jumps = 0;
   let oldMax = 0;
