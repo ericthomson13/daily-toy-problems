@@ -68,36 +68,41 @@ const numberToEnglish = (num) => {
     switch(arr.length) {
       case arr.length >= 18:
         result += numbersToPlace[18];
-        return;
+        break;
       case arr.length >= 15:
         result += numbersToPlace[15];
-        return;
+        break;
       case arr.length >= 12:
         result += numbersToPlace[12];
-        return;
+        break;
       case arr.length >= 9:
         result += numbersToPlace[9];
-        return;
+        break;
       case arr.length >= 6:
         result += numbersToPlace[6];
-        return;
+        break;
       case arr.length >= 4:
         result += numbersToPlace[4];
-        return;
+        break;
       case arr.length >= 3:
         result += numbersToPlace[3];
-        return;
+        break;
       default:
-        return;
+        break;
     }
+    // add space after places
+    if (arr.length >= 3) result += ' ';
   };
 
   // helper function for each set of 3 or less
   const threeHelper = (subArr) => {
     // if has hundreds place
     if (subArr.length === 3) {
-      // add number then hundred behind it
-      result += numbersToWords[subArr[0]] + ' hundred';
+      // if hundreds is not 0
+      if (subArr[0] !== '0') {
+        // add number then hundred behind it
+        result += numbersToWords[subArr[0]] + ' hundred ';
+      }
       // remove front number
       subArr.shift();
     }
@@ -110,9 +115,13 @@ const numberToEnglish = (num) => {
         result += ('-' + numbersToWords[subArr[1]]);
       }
     // if tens place is 0
-    } else {
-      result + numbersToWords[subArr[1]];
+    } else if (subArr[1] !== '0') {
+      result += numbersToWords[subArr[1]];
     }
+    if (subArr.length === 1 && subArr[0] !== '0') {
+      result += numbersToWords[subArr[0]];
+    }
+
   };
 
   // start off arring to handle numbers that start with tens or ones
@@ -135,7 +144,7 @@ const numberToEnglish = (num) => {
     numArr.splice(0, 3);
   };
 
-  return result;
+  return result.trimEnd();
 };
 
 export default numberToEnglish;

@@ -44,3 +44,18 @@ export const numsAbove20Under100 = [
   [21, 'twenty-one'],
 ];
 
+export const numsAbove100Under1000 = [
+  [100, 'one hundred'],
+  [999, 'nine hundred ninety-nine'],
+  [105, 'one hundred five'],
+  [220, 'two hundred twenty'],
+  [567, 'five hundred sixty-seven'],
+  [900, 'nine hundred'],
+];
+
+export const numsAbove1000Under100000 = [
+  [1001, 'one thousand one'],
+  [1028, 'one thousand twenty-eight'],
+  [43354, 'forty-three thousand fifty-four'],
+  [99999, 'ninety-nine thousand nine hundred ninety-nine'],
+];
