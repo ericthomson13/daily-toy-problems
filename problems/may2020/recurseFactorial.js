@@ -5,7 +5,7 @@ Write a recursive implementation of a factorial function.
 */
 
 const recursiveFactorial = (num) => {
-  if (num <= 1) return num;
+  if (num <= 1) return num >= 0 ? num : null;
 
   let result = 1;
 
