@@ -8,6 +8,7 @@ describe('Non Overlapping Intervals Tests', () => {
 
   test('Returns 0 when only one interval', () => {
     expect(eraseOverlap([[1, 2]])).toBe(0);
+
   });
 
   test('Returns expected output for Leet Code Example 1', () => {
