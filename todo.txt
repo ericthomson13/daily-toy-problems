@@ -5,6 +5,7 @@ LRU cache Testing
 Cousins In Binary Tree Solution and Testing
 Find Largest Values In Tree Testing
 Reverse Part of SLL
+subset of N Distinct Solution and Testing
 
 sorting Algos
   notes about efficiency in Algos
