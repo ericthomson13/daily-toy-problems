@@ -60,3 +60,18 @@ export const isPalindrome2 = (s) => {
 
     return true;
 };
+
+export const regexPalindrome = (s) => {
+  const newStr = s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+  let start = 0,
+  end = newStr.length - 1;
+
+  while (start < end) {
+    if (newStr[start] !== newStr[end]) return false;
+    start++;
+    end--;
+  }
+
+  return true;
+}

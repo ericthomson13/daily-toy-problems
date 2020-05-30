@@ -1,4 +1,4 @@
-import { palindromeStr, isPalindrome2, } from '../../problems/may2020/palindromeString';
+import { palindromeStr, isPalindrome2, regexPalindrome, } from '../../problems/may2020/palindromeString';
 
 const palindromes = ['anna', 'civic', 'kayak', 'level', 'madam', 'mom', 'noon', 'racecar', 'Red rum sir, is murder', "A man, a plan, a canal: Panama"];
 const notPalindromes = ['string', 'none', 'not', 'false'];
@@ -19,7 +19,7 @@ describe('Palindrome String Tests', () => {
   });
 });
 
-describe('Palindrome Exampe 2 Tests', () => {
+describe('Palindrome Example 2 Tests', () => {
 
   test.each(short)('Returns true when given a string with length of 0 or 1', (i) => {
     expect(isPalindrome2(i)).toBe(true);
@@ -31,5 +31,20 @@ describe('Palindrome Exampe 2 Tests', () => {
 
   test.each(palindromes)('Returns true when string is a palindrome', (i) => {
     expect(isPalindrome2(i)).toBe(true);
+  });
+});
+
+describe('Regex Palindrome Tests', () => {
+
+  test.each(short)('Returns true when given a string with length of 0 or 1', (i) => {
+    expect(regexPalindrome(i)).toBe(true);
+  });
+
+  test.each(notPalindromes)('Returns false when string is not a palindrome', (i) => {
+    expect(regexPalindrome(i)).toBe(false);
+  });
+
+  test.each(palindromes)('Returns true when string is a palindrome', (i) => {
+    expect(regexPalindrome(i)).toBe(true);
   });
 });
