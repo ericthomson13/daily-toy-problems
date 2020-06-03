@@ -32,11 +32,13 @@ It is guaranteed that costs.length is even.
 
 */
 
-const twoCityScheduling = (costs) => {
+export const twoCitySchedulingOne = (costs) => {
   let cityA = costs.length / 2;
   let cityB = cityA;
 
   let result = 0;
+
+  costs = costs.sort((a, b) => Math.abs(b[0] - b[1]) - Math.abs(a[0] - a[1]));
 
   for (let i = 0; i < costs.length; i++) {
     if (cityA === 0) {
@@ -55,4 +57,10 @@ const twoCityScheduling = (costs) => {
   }
 
   return result;
-}
+};
+
+export const twoCitySchedulingTwo = (costs) => {
+  return costs.sort((a, b) => (a[0] - a[1]) - (b[0] - b[1]))
+    .map((cost, i) => i < costs.length / 2 ? cost[0] : cost[1])
+    .reduce((sum, val) => sum += val, 0);
+};
