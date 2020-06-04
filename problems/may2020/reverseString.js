@@ -20,6 +20,7 @@ Output: ["h","a","n","n","a","H"]
 
 // this will reverse in place so no return value
 const reverseString = (s) => {
+  if (s.length === 0) return s;
   let start = 0;
   let end = s.length - 1;
 
