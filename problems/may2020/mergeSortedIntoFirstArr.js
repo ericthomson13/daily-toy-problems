@@ -24,7 +24,7 @@ const merge = (nums1, m, nums2, n) => {
   // when no values to merge
   if (n === 0) return;
 
-  let i = nums1.length- 1;
+  let i = nums1.length - 1;
   // make m and n pointers to nums in arrays
   n--;
   m--;
