@@ -26,7 +26,7 @@ Both strings consists only of lowercase characters.
 
 
 const isSub = (s, t) => {
-  if (!s.length) return true;
+  if (!s) return true;
   if (s.length > t.length) return false;
 
   let i = 0;
