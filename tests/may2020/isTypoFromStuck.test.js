@@ -27,4 +27,11 @@ describe('Is Typo From Stuck Key Tests', () => {
 
     expect(isTypo(dictionary, string)).toBe(false);
   });
+
+  // not passing test as of 10JUN2020
+  xtest('Returns true when ends with typo', () => {
+    const string = 'grassss';
+
+    expect(isTypo(dictionary, string)).toBe(true);
+  });
 });
