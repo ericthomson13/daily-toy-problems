@@ -23,7 +23,7 @@ const isTypo = (d, s) => {
   const dictionaryTrees = {};
 
   // add the first letter of all words in dictionary to dictionaryTrees
-  for (let word in dictionaryTrees) {
+  for (let word of d) {
     let i = 0;
     let current = dictionaryTrees;
 
@@ -32,23 +32,28 @@ const isTypo = (d, s) => {
         current[word[i]] = {};
         current = current[word[i]];
       }
+      if (i === word.length - 1) {
+        current.end = true;
+      }
       i++;
     }
   }
 
   // traverse tree until either ends or word is checked
   let current = dictionaryTrees;
+  let j = 0;
 
-  for (let i = 0; i < s.length; i++) {
-    if (!current[s[i]]) {
+  while (j < s.length) {
+    if (!current[s[j]]) {
       return false;
-    } else if (s[i] !== s[i + 1]){
-      current = current[s[i]];
+    } else if (s[j] !== s[j + 1]) {
+      current = current[s[j]];
     }
+    j++;
   }
 
   // returns true if doesn't error out
-  return true;
+  return current.end || false;
 };
 
 export default isTypo;
