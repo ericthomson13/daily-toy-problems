@@ -50,7 +50,7 @@ const searchBST = (root, val) => {
     if (node.val === val) return node;
     if (val > node.val) return search(node.right);
     if (val < node.val) return search(node.left);
-  }
+  };
 
   return search(root);
 };
