@@ -82,24 +82,4 @@ const isValidIP = (IP) => {
   return fail;
 };
 
-
-`Input:
-"2001:0db8:85a3:00000:0:8A2E:0370:7334"
-Output:
-"IPv6"
-Expected:
-"Neither"`
-
-`Input:
-"20EE:FGb8:85a3:0:0:8A2E:0370:7334"
-Output:
-"IPv6"
-Expected:
-"Neither"`
-
-`Input:
-"1e1.4.5.6"
-Output:
-"IPv4"
-Expected:
-"Neither"`
+export default isValidIP;
