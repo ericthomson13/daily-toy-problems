@@ -44,15 +44,16 @@
  */
 
  const rotateMatrix = (m) => {
+  if (!m.length || !m[0].length) return m;
   const rotated = [];
 
   for (let i = 0; i < m[0].length; i++) {
     rotated.push([]);
   }
 
-  for (const [index, row] of m.entries()) {
-    m[index].forEach((item) => {
-      let insert = m[index].indexOf(item);
+  for (let i = 0; i < m.length; i++) {
+    m[i].forEach((item) => {
+      let insert = m[i].indexOf(item);
       rotated[insert].push(item);
     });
   }
